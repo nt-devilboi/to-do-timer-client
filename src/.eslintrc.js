@@ -11,7 +11,7 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ["C:\\Users\\VOISTINU\\Desktop\\to-do-timer-client\\tsconfig.json"]
+        project: ["..\\tsconfig.json"]
     },
     plugins: [
         '@typescript-eslint'  // Для TypeScript.
@@ -22,11 +22,10 @@ module.exports = {
             extends: [
                 'plugin:@typescript-eslint/recommended',
                 'plugin:@typescript-eslint/recommended-requiring-type-checking',
-                "plugin:react/recommended"
             ],
             parserOptions: {
                 tsconfigRootDir: __dirname,
-                project: ["C:\\Users\\VOISTINU\\Desktop\\to-do-timer-client\\tsconfig.json"],
+                project: ["..\\tsconfig.json"],
             },
         },
     ],
@@ -38,6 +37,9 @@ module.exports = {
         "no-console": "off",
         "space-before-function-paren": "off",
         "no-trailing-spaces": "off",
-        "indent-legacy": "off"
+        "indent-legacy": "off",
+        "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "no-return-await": "off"
     }
 }

@@ -13,6 +13,7 @@
     "axios": "^1.4.0",
     "mobx": "^6.9.0",
     "mobx-react": "^7.6.0",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.14.1",
@@ -53,5 +54,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.25.3",
     "typescript": "^5.1.6"
-  }
+  },
+  "proxy": "https://localhost:7278"
+
 }

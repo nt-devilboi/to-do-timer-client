@@ -1,0 +1,31 @@
+.AuthMenu {
+  width: 100%;
+  height: 70%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+
+  .ContainerMenu {
+    background: slategray;
+    width: 20%;
+    height: 50%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+      width: 50%;
+      position: relative;
+      top: 20%;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+  }
+
+}
