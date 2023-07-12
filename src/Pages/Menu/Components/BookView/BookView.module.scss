@@ -1,0 +1,21 @@
+.BookContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+
+
+  .segment {
+    width: 20%;
+
+    .link {
+      display-outside: ruby;
+      display: inline-block;
+      position: absolute;
+      left: 70%;
+      bottom: 31.5%;
+      width: 7em;
+      font-size: 0.9em;
+    }
+  }
+
+}

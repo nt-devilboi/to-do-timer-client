@@ -23,7 +23,6 @@ export class PrivateRouter extends PageComponent<props> {
 
     return (
       <div>
-        <p> блфаывоажфыво</p>
         <Outlet/>
       </div>
     );

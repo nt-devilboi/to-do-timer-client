@@ -1,7 +1,7 @@
 import { PageComponent } from "../../Lib/PageComponent";
 import { BooksStore } from "./BooksStore";
 import { inject, observer } from "mobx-react";
-import { BookView } from "./Components/BookView";
+import { BookView } from "./Components/BookView/BookView";
 
 interface props {
     booksStore: BooksStore

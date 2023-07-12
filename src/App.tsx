@@ -13,7 +13,7 @@ export class App extends React.Component {
       <div>
         <Routes>
           <Route path={HttpPaths.Login.main} element={<Login/>}/>
-          <Route path={HttpPaths.app.Loading} element={<PrivateRouter/>}>
+          <Route path={HttpPaths.app.main} element={<PrivateRouter/>}>
             <Route path={HttpPaths.app.Board} element={<Board/>}/>
             <Route path={HttpPaths.app.Menu} element={<MenuView/>}/>
           </Route>
