@@ -1,5 +1,4 @@
 import axios, { type AxiosError } from "axios";
-import ApiRequest from "./ApiRequest";
 
 // концепия интересная, но пока не могу сказать, не мусорный ли это просто код
 export interface ResponseData<T> {
@@ -7,8 +6,10 @@ export interface ResponseData<T> {
     status: number
 }
 
+const nameToken = "Bearer";
+
 // TODO ужас здесь повторяется код!!! catch then убрать определённо
-class ApiClient extends ApiRequest {
+class ApiClient {
   private axios = axios.create();
 
   public async post<TGet, TPost>(url: string, dataPost: TPost, token?: string): Promise<ResponseData<TGet>> {
@@ -25,7 +26,7 @@ class ApiClient extends ApiRequest {
 
   public async patch<TGet, TPost>(url: string, token: string, dataPost: TPost): Promise<ResponseData<TGet>> { // todo убери токен в правую часть аргуменутом плз!!!
     try {
-      const resp = await axios.patch<TGet>(url, dataPost, { headers: { Authorization: `token ${token}` } });
+      const resp = await axios.patch<TGet>(url, dataPost, { headers: { Authorization: `${nameToken} ${token}` } });
       return { data: resp.data, status: resp.status };
     } catch (err) {
       const error = err as AxiosError<TGet, any>;
@@ -37,7 +38,7 @@ class ApiClient extends ApiRequest {
   // TODo переделеать, в более универальный случай
   public async getByToken<TGet>(token: string, url: string): Promise<TGet> { // как идея, можно выкинуть этоткод за абстрак класс, и брать его для всех методов здесь, тогда повторов не будет
     try {
-      const response = await this.GetByToken<TGet>(url, token);
+      const response = await axios.get<TGet>(url, { headers: { Authorization: `${nameToken} ${token}` } });
       return response.data;
     } catch (err) {
       const e = err as AxiosError<TGet, any>;

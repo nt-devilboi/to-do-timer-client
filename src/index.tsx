@@ -1,16 +1,20 @@
 import * as React from "react";
-import App from "./App";
 import ReactDOM from "react-dom/client";
 import { Provider } from "mobx-react";
 import { BrowserRouter } from "react-router-dom";
 import { AuthStore } from "./Pages/Login/AuthStore";
+import { UserStore } from "./Pages/Board/UserStore";
+import { App } from "./App";
+import { BooksStore } from "./Pages/Menu/BooksStore";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 
 const stores = {
-  AuthStore: new AuthStore()
+  authStore: new AuthStore(),
+  userStore: new UserStore(),
+  booksStore: new BooksStore()
 };
 
 root.render(

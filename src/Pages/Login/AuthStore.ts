@@ -1,5 +1,7 @@
-import StoreAdapterApi from "../../Api/StoreAdapterApi";
-import { action, makeObservable, observable } from "mobx";
+import { action, makeObservable } from "mobx";
+import { StatusResponse } from "../../Api/StatusResponse";
+import { IResponse } from "../../Api/interfaces/IResponse";
+import { StoreAdapterApi } from "../../Api/LibApi/StoreAdapterApi";
 
 interface RequestAuth {
     userName?: string,
@@ -8,6 +10,7 @@ interface RequestAuth {
 
 export class AuthStore extends StoreAdapterApi {
   private AuthUser: RequestAuth = {};
+  private Response: StatusResponse = StatusResponse.Wait;
 
   constructor() {
     super();
@@ -16,7 +19,11 @@ export class AuthStore extends StoreAdapterApi {
 
     @action.bound
   async auth(): Promise<void> {
-    await this.postWithoutToken("/user/Login", this.AuthUser);
+    const x = await this.TryAuth<RequestAuth>("/user/Login", this.AuthUser);
+    this.Response = x.status;
+    if (this.Response === StatusResponse.BadRequest) {
+      // todo кароче прописать логику всех статусов
+    }
   }
 
     @action.bound

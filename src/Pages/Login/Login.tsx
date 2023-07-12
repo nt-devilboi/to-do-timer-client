@@ -5,23 +5,23 @@ import styles from "./Login.module.scss";
 import { AuthStore } from "./AuthStore";
 
 type props = {
-    AuthStore: AuthStore;
+    authStore: AuthStore;
 }
 
-@inject("AuthStore")
+@inject("authStore")
 @observer
 export class Login extends PageComponent<props> {
   render() {
-    const { AuthStore } = this.injected;
+    const { authStore } = this.injected;
     return (
       <div className={styles.AuthMenu}>
         <div className={styles.ContainerMenu}>
-          <input type={"text"} onChange={e => AuthStore.changeUsername(e.target.value)}
+          <input type={"text"} onChange={e => authStore.changeUsername(e.target.value)}
             className={styles.text}/>
-          <input type={"text"} onChange={e => AuthStore.changePassword(e.target.value)}
+          <input type={"text"} onChange={e => authStore.changePassword(e.target.value)}
             className={styles.text}/>
           {/* eslint-disable-next-line @typescript-eslint/unbound-method,@typescript-eslint/no-misused-promises */}
-          <input type={"button"} onClick={AuthStore.auth}/>
+          <input type={"button"} onClick={authStore.auth}/>
         </div>
       </div>
     );

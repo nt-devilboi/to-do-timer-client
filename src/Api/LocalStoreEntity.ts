@@ -1,4 +1,4 @@
-import { ILocalStore } from "./ILocalStore";
+import { ILocalStore } from "./interfaces/ILocalStore";
 
 export class LocalStoreEntity implements ILocalStore {
   constructor(private readonly key: string) {
