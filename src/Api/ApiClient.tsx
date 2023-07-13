@@ -13,7 +13,7 @@ class ApiClient {
   private axios = axios.create();
 
   public async post<TGet, TPost>(url: string, dataPost: TPost, token?: string): Promise<ResponseData<TGet>> {
-    this.axios.defaults.headers.common.Authorization = token;
+    this.axios.defaults.headers.common.Authorization = `Bearer ${token!}`;
     try {
       const resp = await this.axios.post<TGet>(url, dataPost);
       return { data: resp.data, status: resp.status };

@@ -1,8 +1,8 @@
 import React from "react";
-import { type ILocalStore } from "../interfaces/ILocalStore";
-import { LocalStoreEntity } from "../LocalStoreEntity";
-import { IResponse } from "../interfaces/IResponse";
-import ApiClient, { ResponseData } from "../ApiClient";
+import { type ILocalStore } from "./interfaces/ILocalStore";
+import { LocalStoreEntity } from "./LocalStoreEntity";
+import { IResponse } from "./interfaces/IResponse";
+import ApiClient, { ResponseData } from "./ApiClient";
 
 export abstract class StoreAdapterApi {
   private readonly _api: ApiClient = new ApiClient();

@@ -40,6 +40,7 @@ module.exports = {
         "indent-legacy": "off",
         "@typescript-eslint/unbound-method": "off",
         "@typescript-eslint/no-misused-promises": "off",
-        "no-return-await": "off"
+        "no-return-await": "off",
+
     }
 }

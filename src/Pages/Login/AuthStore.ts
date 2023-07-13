@@ -1,7 +1,7 @@
 import { action, makeObservable } from "mobx";
 import { StatusResponse } from "../../Api/StatusResponse";
 import { IResponse } from "../../Api/interfaces/IResponse";
-import { StoreAdapterApi } from "../../Api/LibApi/StoreAdapterApi";
+import { StoreAdapterApi } from "../../Api/StoreAdapterApi";
 
 interface RequestAuth {
     userName?: string,

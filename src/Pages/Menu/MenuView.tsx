@@ -1,7 +1,7 @@
 import { PageComponent } from "../../Lib/PageComponent";
 import { BooksStore } from "./BooksStore";
 import { inject, observer } from "mobx-react";
-import { BookView } from "./Components/BookView/BookView";
+import { SegmentBookView } from "./Components/SegmentBookView/SegmentBookView";
 
 interface props {
     booksStore: BooksStore
@@ -20,7 +20,7 @@ export class MenuView extends PageComponent<props> {
     console.log("вьюшка");
     return (
       <div>
-        {booksStore.books != null && booksStore.books.map(b => <BookView book={b}/>)}
+        {booksStore.books != null && booksStore.books.map(b => <SegmentBookView book={b}/>)}
       </div>
     );
   }

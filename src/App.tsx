@@ -6,6 +6,7 @@ import { HttpPaths } from "./Pages/HttpPaths";
 import { Board } from "./Pages/Board/Board";
 import { PrivateRouter } from "./Components/PrivateRouter";
 import { MenuView } from "./Pages/Menu/MenuView";
+import BookView from "./Pages/BookView/BookView";
 
 export class App extends React.Component {
   render() {
@@ -14,7 +15,7 @@ export class App extends React.Component {
         <Routes>
           <Route path={HttpPaths.Login.main} element={<Login/>}/>
           <Route path={HttpPaths.app.main} element={<PrivateRouter/>}>
-            <Route path={HttpPaths.app.Board} element={<Board/>}/>
+            <Route path={HttpPaths.app.Board} element={<BookView/>}/>
             <Route path={HttpPaths.app.Menu} element={<MenuView/>}/>
           </Route>
         </Routes>

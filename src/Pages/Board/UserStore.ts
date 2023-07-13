@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from "mobx";
 import { IResponse } from "../../Api/interfaces/IResponse";
-import { StoreAdapterApi } from "../../Api/LibApi/StoreAdapterApi";
+import { StoreAdapterApi } from "../../Api/StoreAdapterApi";
 
 export interface IUser {
     UserName: string,

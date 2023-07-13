@@ -1,5 +1,5 @@
 import { Book } from "./Model/Book";
-import { StoreAdapterApi } from "../../Api/LibApi/StoreAdapterApi";
+import { StoreAdapterApi } from "../../Api/StoreAdapterApi";
 import { IResponse } from "../../Api/interfaces/IResponse";
 import { action, makeObservable, observable } from "mobx";
 

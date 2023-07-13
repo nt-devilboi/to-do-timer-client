@@ -3,6 +3,6 @@ export const HttpPaths = {
   app: {
     main: "/app",
     Menu: "menu",
-    Board: "book/:id"
+    Board: "menu/book/:id"
   }
 };
